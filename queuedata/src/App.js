@@ -3,12 +3,12 @@ import { useQueueState } from "rooks";
 import "./App.css";
 
 function App() {
-  const numberToPush = useRef(5);
+  const numOfElements = useRef(5);
   const [list, { enqueue, dequeue }] = useQueueState([1, 2, 3, 4, 5]);
 
   const addToQueue = () => {
-    numberToPush.current = numberToPush.current + 1;
-    enqueue(numberToPush.current);
+    numOfElements.current = numOfElements.current + 1;
+    enqueue(numOfElements.current);
   };
   return (
     <div>

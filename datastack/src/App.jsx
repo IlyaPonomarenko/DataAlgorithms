@@ -3,12 +3,12 @@ import { useStackState } from "rooks";
 import "./App.css";
 
 function App() {
-  const numberToPush = useRef(5);
+  const numOfElements = useRef(5);
   const [listInReverse, { push, pop }] = useStackState([1, 2, 3, 4, 5]);
 
-  const addToStack = () => {
-    numberToPush.current = numberToPush.current + 1;
-    push(numberToPush.current);
+  const addNum = () => {
+    numOfElements.current = numOfElements.current + 1;
+    push(numOfElements.current);
   };
   return (
     <div>
@@ -22,7 +22,7 @@ function App() {
           );
         })}
       </div>
-      <button onClick={addToStack}>Push</button>
+      <button onClick={addNum}>Push</button>
       <button onClick={pop}>Pop</button>
     </div>
   );
